@@ -3,7 +3,7 @@ charset-normalizer==2.1.1
 click==8.1.3
 gTTS==2.2.4
 idna==3.3
-playsound==1.3.0
+playsound==1.2.2
 PyAudio==0.2.12
 requests==2.28.1
 six==1.16.0

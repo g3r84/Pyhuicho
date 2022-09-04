@@ -25,7 +25,7 @@ def listen():
 def transcript(audio):
     # recognize speech using Google Speech Recognition
     try:
-        print("Google Speech Recognition entendio:  " + r.recognize_google(audio, language='es_PE'))
+        print("Google Speech Recognition entendio:  " + R.recognize_google(audio, language='es_PE'))
     except sr.UnknownValueError:
         print("Google Speech Recognition no entendio el audio")
     except sr.RequestError as e:

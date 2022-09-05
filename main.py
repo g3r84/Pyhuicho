@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 from gtts import gTTS
-import playsound
+from pydub import AudioSegment as Aseg
+from pydub.playback import play
 import speech_recognition as sr
 
 # global variables #
@@ -12,12 +13,13 @@ def speak(text):
     # process text-to-speech #
     tts = gTTS(text, lang='es', tld='com.mx')
     tts.save('tts.mp3')
-    playsound.playsound('tts.mp3')
+    speak = Aseg.from_mp3('tts.mp3')
+    play(speak)
 
 def listen():
     # get audio from microphone to audio object #
     with sr.Microphone(device_index=0) as source:
-        playsound.playsound('beeping.mp3')
+        print('escuchando...')
         R.adjust_for_ambient_noise(source)
         audio = R.listen(source)
     return audio
